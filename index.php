@@ -14,6 +14,7 @@
     </style>
 </head>
 <body>
+<h2>Ветка Develop</h2>
 <h1 id="score" style="text-align: start">0</h1>
     <canvas id="snakeCanvas" width="400" height="400"></canvas>
     <script>
