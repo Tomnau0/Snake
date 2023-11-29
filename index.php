@@ -16,12 +16,12 @@
         }
     </style>
 </head>
-<body>
+<body id="body">
 <h1 id="score" style="text-align: start">0</h1>
     <canvas id="snakeCanvas" width="400" height="400"></canvas>
     <script>
-        var otryzhka = new Audio('/click.mp3');
-        var gameOver = new Audio('gameOver.mp3');
+        const otryzhka = new Audio('/click.mp3');
+        const gameOver = new Audio('gameOver.mp3');
         const countScore=document.querySelector('#score');
         
         
