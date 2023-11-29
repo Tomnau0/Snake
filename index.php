@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snake Game</title>
     <style>
+        body{
+            background: gray;
+        }
         canvas {
             background: #000;
-            border: 1px solid #000;
+            border: 5px solid #795548;
             margin: 20px auto;
             display: block;
         }
@@ -17,24 +20,27 @@
 <h1 id="score" style="text-align: start">0</h1>
     <canvas id="snakeCanvas" width="400" height="400"></canvas>
     <script>
+        var otryzhka = new Audio('/click.mp3');
+        var gameOver = new Audio('gameOver.mp3');
+        const countScore=document.querySelector('#score');
+        
+        
         // Инициализация canvas
         const canvas = document.getElementById("snakeCanvas");
         const ctx = canvas.getContext("2d");
 
         // Константы
         const GRID_SIZE = 20;
-        const WIDTH = canvas.width;
-        const HEIGHT = canvas.height;
-
-
-        var otryzhka = new Audio('/click.mp3');
-        var gameOver = new Audio('gameOver.mp3');
-        const countScore=document.querySelector('#score');
-
+        const WIDTH = canvas.width;//400
+        const HEIGHT = canvas.height;//400
+        
+        
         // Инициализация змеи
         let snake = [{ x: 100, y: 100 }, { x: 90, y: 100 }, { x: 80, y: 100 }];
+
         let snakeDirection = { x: GRID_SIZE, y: 0 };
 
+        console.log(Math.floor(Math.random() * (WIDTH / GRID_SIZE)) * GRID_SIZE);
         // Инициализация фрукта
         let fruit = { x: Math.floor(Math.random() * (WIDTH / GRID_SIZE)) * GRID_SIZE, y: Math.floor(Math.random() * (HEIGHT / GRID_SIZE)) * GRID_SIZE };
 
@@ -139,7 +145,7 @@
         // Главный цикл игры
         function gameLoop() {
             updateGame();
-            setTimeout(gameLoop, 100);
+            setTimeout(gameLoop, 10000);
         }
 
         // Запуск игры
