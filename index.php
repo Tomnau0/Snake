@@ -145,7 +145,7 @@
         // Главный цикл игры
         function gameLoop() {
             updateGame();
-            setTimeout(gameLoop, 10000);
+            setTimeout(gameLoop, 200);
         }
 
         // Запуск игры
